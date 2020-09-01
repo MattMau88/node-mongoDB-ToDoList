@@ -18,7 +18,7 @@ app.use(express.static("public"));
 // const workItems = [];
 
 // new DB setup
-mongoose.connect('mongodb://localhost:27017/todolistDB', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@' + process.env.DB_CLUSTER + '.zrs4w.mongodb.net/todolistDB', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const itemsSchema = new mongoose.Schema({
   name: String
