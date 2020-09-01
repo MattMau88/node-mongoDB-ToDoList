@@ -18,7 +18,7 @@ app.use(express.static("public"));
 // const workItems = [];
 
 // new DB setup
-mongoose.connect('mongodb+srv://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@' + process.env.DB_CLUSTER + '.zrs4w.mongodb.net/todolistDB', {useNewUrlParser: true, useUnifiedTopology: true}).catch(error => console.log(error));
+mongoose.connect('mongodb+srv://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@' + process.env.DB_CLUSTER + '.zrs4w.mongodb.net/todolistDB?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true}).catch(error => console.log(error));
 
 const itemsSchema = new mongoose.Schema({
   name: String
